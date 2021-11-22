@@ -13,7 +13,7 @@ These labs cover the following topics:
 - Classification and Interception Rules
 - Outbound and Inbound Use cases
 
-Expected time to complete: **2 hours or 4 hours** (depending on version)
+Expected time to complete: **Approximately 2 hours or less** 
 
 Support
 -------
