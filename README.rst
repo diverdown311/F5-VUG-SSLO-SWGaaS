@@ -1,14 +1,10 @@
-F5 SSL Orchestrator Training Lab Guide
+F5 SSL Orchestrator with Secure Web Gateway Services (SWGaaS) Lab Guide
 ======================================
 
 This repository contains the source for the F5 SSL Orchestrator Training
 Lab Guides.
 
-- SSL Orchestrator v7 - SSLO 101: Essential SSL Visibility with SSL Orchestrator (Agility | 2 hours)
-- SSL Orchestrator v7 - SSLO 201: Real World Use Cases / Putting It to Use (Agility | 2 hours)
-- [Archived] SSL Orchestrator v4 (Agility 2018 | 4 hours)
-- [Archived] SSL Orchestrator v5 (Ravello | 4 hours)
-- [Archived] SSL Orchestrator v6 (Ravello | 4 hours)
+- SSL Orchestrator v9 - SSLO 101: F5 SSL Orchestrator solution review and SWG as a Service (Approximate Lab Time | 2 hours)
 
 These labs cover the following topics:
 
