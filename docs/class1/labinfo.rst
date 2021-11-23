@@ -108,9 +108,7 @@ the BIG-IP GUI.
 
 
 
-.. list-table:: **Inline layer 2 service**
-   :header-rows: 0
-   :widths: auto
+
 
    * - Login
      - student:agility
@@ -118,12 +116,12 @@ the BIG-IP GUI.
 SSL Orchestrator Consolidated Services Architecture (UDF Version)
 
 A Docker Compose configuration to create all of the SSLO security services on a single Ubuntu 18.04 instance, to both simplify and dramatically reduce resource utlization in a virtual environment.
-================================
+
 
 About
 ================================
 This Docker Compose configuration supports the SSL Orchestrator lab environment, which itself supports 802.1Q VLAN tags. This also reduces the number of physical interfaces and connections required. The Docker Compose file contains all of the layer 3 services (ICAP, explicit proxy, layer 3 service, and web servers). Layer 2 and TAP services are defined directly on the host system and described in the "layer2-tap-config" readme file.
-================================
+
 
 The following is a visual representation of this lab
 environment. The numbers inside the right edge of the SSL Orchestrator
