@@ -63,7 +63,10 @@ the BIG-IP GUI.
    application environment. A wildcard server certificate is installed
    to facilitate using any name under the ":red:`.f5labs.com`" sub-domain.
 
-.. TIP:: It is a security best practice to isolate security devices
+TIP
+================================
+
+   It is a security best practice to isolate security devices
    within the protected network enclaves provided by SSLO. Customers will
    often desire NOT to move or change existing security services. However,
    while possible with SSLO 4.0 and beyond, passing this decrypted traffic
