@@ -106,17 +106,12 @@ the BIG-IP GUI.
      - web-vlan
      - 1.3 tag 80
 
-
-
-
-
    * - Login
      - student:agility
 
 SSL Orchestrator Consolidated Services Architecture (UDF Version)
 
 A Docker Compose configuration to create all of the SSLO security services on a single Ubuntu 18.04 instance, to both simplify and dramatically reduce resource utlization in a virtual environment.
-
 
 About
 ================================
