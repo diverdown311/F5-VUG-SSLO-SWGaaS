@@ -19,11 +19,11 @@ Guide" and the VM's you'll spend all of your time attached to.
 
 .. NOTE::
 
-   All of your lab exercise work will be done from a single jump host (accessed via Remove Desktop Protocol (RDP) client).
+   All of your lab exercise work will be done from a single jump hostname titled Ubuntu18.04 Client (accessed via the XRDP client).
    
    You will not need to use SSH to access the UDF lab environment, so no SSH Key needs to be conffigured.
 
-From the :bred:`DEPLOYMENT` tab, you will access the :bred:`DESKTOP-OUTBOUND` system over RDP. 
+From the :bred:`DEPLOYMENT` tab, you will access the :bred:`Ubuntu18.04 Client` system over XRDP. 
 You can select the window resolution for the RDP session. An RDP file will be downloaded to your local
 system and you will need to open it to connect.
 
@@ -43,7 +43,7 @@ the BIG-IP GUI.
    make the lab simpler.
 
    The following information is based on a custom :bred:`UDF` blue print named
-   :bred:`Agility 2020 - Essential SSL Visibility with SSLO`.
+   :bred:`SSL Orchestrator 9.0 Lab`.
 
 -  **Client side VLAN and subnet are pre-defined** - this is the VLAN
    that an internal client connects to for outbound traffic flows. SSLO
@@ -52,10 +52,6 @@ the BIG-IP GUI.
 -  **Outbound side VLAN and subnet are pre-defined** - this is the VLAN
    that traffic egresses from SSLO to the Internet gateway. SSLO does
    not define the server-side VLAN(s) and self-IP(s).
-
--  **ICAP service VLAN and subnet are pre-defined** - SSLO does not
-   define the networking for this service type, so it has been
-   pre-created in this lab.
 
 -  **CA certificate and private key are installed** - this is the CA
    certificate and private key that are used to re-issue (forge) remote
@@ -98,26 +94,19 @@ the BIG-IP GUI.
      - admin:admin \| root:default
      -
    * - Interfaces
-     - Client VLAN
+     - client-VLAN
      - 1.1
    * -
-     - Outbound VLAN
+     - outbound VLAN
      - 1.2
+    * -
+     - dlp-vlan
+     - 1.3 tag 50
    * -
-     - ICAP service
-     - 1.3
-   * -
-     - Inline L2 service inbound
-     - 1.4
-   * -
-     - Inline L2 service outbound
-     - 1.5
-   * -
-     - Inline L3/HTTP services
-     - 1.6 (tagged)
-   * -
-     - TAP service
-     - 1.7
+     - web-vlan
+     - 1.3 tag 80
+
+
 
 .. list-table:: **Inline layer 2 service**
    :header-rows: 0
