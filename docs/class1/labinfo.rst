@@ -29,7 +29,7 @@ system and you will need to open it to connect.
 
 |
 
-.. image:: images/labinfo-2.png
+.. image:: images/labinfo-1.png
    :align: center
 
 Lab Details
