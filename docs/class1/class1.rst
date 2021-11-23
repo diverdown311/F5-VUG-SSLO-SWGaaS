@@ -1,4 +1,4 @@
-SSL Orchestrator v9 - SSLO 101: Essential SSL Visibility with SSL Orchestrator Overview
+SSL Orchestrator v9 - SSL Orchestrator Consolidated Services Architecture 
 ==================================================================================================
 
 
