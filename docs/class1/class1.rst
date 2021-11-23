@@ -1,7 +1,6 @@
-SSL Orchestrator v7 - SSLO 101: Essential SSL Visibility with SSL Orchestrator (Agility | 2 hours)
+SSL Orchestrator v9 - SSLO 101: Essential SSL Visibility with SSL Orchestrator Overview
 ==================================================================================================
 
-Created for use at F5 Agility 2020
 
 As the volume of data continues to grow at a rapid pace, more organizations are
 deploying Secure Socket Layer (SSL) and Transport Layer Security (TLS) solutions
