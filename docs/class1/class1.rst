@@ -19,7 +19,12 @@ security, and reduces infrastructure efficiencies by:
 
 - Supporting multiple deployment modes for flexibility in integrating with complex architectures
 
-Attend this lab to get a hands-on introduction to the F5 SSL Orchestrator solution.
+- As of SSL Orchestrator 9.2 you are now able to insert F5’s Secure Web Gateway (SWG) as an inline security
+service in a service chain for decrypted traffic. SWG allows you to perform transactional web gateway functions,
+like URL filtering, block/continues operations, and request/response (malware) analytics. 
+
+Attend this lab to get a hands-on introduction to the F5 SSL Orchestrator solution as well as gain hands-on experience
+configuring the Secure Web Gateway as an SSL Orchestrator Service. 
 
 Expected time to complete: **2 hours**
 
