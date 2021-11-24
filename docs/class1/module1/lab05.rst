@@ -514,8 +514,7 @@ In this section of the lab, create a **Pinners** rule with the following setting
 
 -  Click :red:`OK`.
 
-   .. image:: ../images/module1-10.png
-
+  
 The last **Security Policy** rue should be a for **All Traffic** that intercepts but
 does *not* send traffic to any service chain. 
 
