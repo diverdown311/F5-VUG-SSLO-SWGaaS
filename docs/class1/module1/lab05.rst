@@ -299,22 +299,20 @@ The **SSL** settings have now been configured.
 Services List
 -----------------
 
-.. image:: ../images/gc-path-3.png
+.. image:: ../images/swg-services-F5SWG.PNG
    :align: center
 
 The Services List page is used to define security
-services that attach to SSLO. The SSLO Guided Configuration now
-includes a services catalog that contains common product
-integrations. Beneath each of these catalog options is one of the
-five basic service types. The service catalog also provides "generic"
-security services. Depending on screen resolution, it may be
-necessary to scroll down to see additional services.
+services that attach to SSLO. For this lab we will use the SSLO Guided
+Configuration to insert the F5 Secure Web Gateway (SWG) as an inline security
+service in a service chain for decrypted traffic. 
 
-.. image:: ../images/module1-5.png
+.. image:: ../images/swg-services.PNG
 
-This lab will create one of each type of security service. Click :red:`Add
-Service`, then either select a service from the catalog and
-click :red:`Add`, or simply double-click the service to go
+This lab will create a Transparent Layer-3 SWG service as well as default Per-Session
+and Per-Request Access Policies which can be modified once the deployment has been
+completed.  Click :red:`Add Service`, then select the **F5 Secure Web Gateway" servicce
+from the catalog and click :red:`Add`, or simply double-click the service to go
 to its configuration page.
 
 Inline layer 2 service
