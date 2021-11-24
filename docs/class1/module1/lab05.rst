@@ -675,10 +675,6 @@ display a **Configure** view:
 
 .. image:: ../images/module1-16.png
 
-The **Interception Rules** tab shows the listeners that were created per the
-selected topology.
-
-.. image:: ../images/module1-17.png
 
 In the above list you will notice the following Virtual Servers have been created:
 
@@ -688,9 +684,7 @@ In the above list you will notice the following Virtual Servers have been create
 
 - The **ssloS_F5_SWG-t-6** listener defines normal non-TCP/non-UDP IPv4 traffic.
 
-This completes the configuration of SSL Orchestrator as a
-transparent forward proxy.
+This completes the configuration of SSL Orchestrator deployment
+for Secure Web Gateway (SWG)
 
-In the next section, you will use an internal client
-**(Desktop-Outbound)** to browse to external (Internet)
-resources. Decrypted traffic will flow across the security services.
+
