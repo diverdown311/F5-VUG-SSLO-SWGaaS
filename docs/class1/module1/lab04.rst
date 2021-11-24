@@ -9,7 +9,7 @@ machine.
 
 - At the **Login to xrdp** window, click on the :red:`OK` button.
 
-.. image:: ../images/module1-18.png
+.. image:: ../images/module1-18-2.PNG
    :align: center
 
 |
