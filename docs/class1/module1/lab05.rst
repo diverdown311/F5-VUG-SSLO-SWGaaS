@@ -127,7 +127,7 @@ topologies:
 
 -  Click on the :red:`Next` button at the bottom of the page.
 
--  **Name**: Enter some name (ex. ":red:`demoL3`").
+-  **Name**: Enter some name (ex. ":red:`sslo_SWGTest`").
 
 -  **Protocol**: Select :red:`Any` - this will create separate
    TCP, UDP and non-TCP/UDP interception rules.
@@ -290,12 +290,13 @@ The **SSL** settings have now been configured.
 
 
 - **Authentication List** 
+
    SSL Orchestrator now supports an option to include Authentication services such as
    an **Online Certificate Status Protocol (OCSP)**.  For this lab we will not be 
    leveraging the **Authentication** option.   Click :red: `Save & Next`
    
 
-.. image:: ../images/module1-4.png
+.. image:: ../images/swg-authentication.PNG
 
 
 Services List
@@ -318,8 +319,11 @@ to its configuration page.
 .. image:: ../images/swg-services.PNG
 
 
-
    - Click :red:`Done`.
+
+Security Policy
+-----------------
+
 
 -  **Device Monitor** - security service definitions can use
    specific custom monitors. For this lab, leave it set to the default
@@ -449,270 +453,6 @@ Inline layer 3 service
 
 -  Click :red:`Save`.
 
-Inline HTTP service
-~~~~~~~~~~~~~~~~~~~
-
-An inline HTTP service is defined as an explicit or transparent proxy for HTTP (web) traffic.
-
--  Click on :red:`Add Service`.
-
--  Select the :red:`Cisco WSA HTTP Proxy` service from the catalog
-   and click :red:`Add`, or simply double-click it.
-
-   -  **Name** - provide a unique name to this service (example ":red:`Proxy`").
-
-   -  **IP Family** - this setting defines the IP family used with this layer 3
-      service. Leave it set to :red:`IPv4`.
-
--  **Auto Manage Addresses** - when enabled the Auto Manage Addresses setting
-   provides a set of unique, non-overlapping, non-routable IP addresses to be
-   used by the security service. If disabled, the To and From IP addresses
-   must be configured manually. It is recommended to leave this option
-   :red:`enabled (checked)`.
-
-   .. ATTENTION:: In environments where SSLO is introduced to existing security
-      devices, it is a natural tendency to not want to have to move these
-      devices. And while SSLO certainly allows it, by not moving the security
-      devices into SSLO-protected enclaves, customers unintentionally run the
-      risk of exposing sensitive decrypted traffic to other devices that may
-      be connected to these existing networks. As a security best practice, it
-      is *highly* recommended to remove SSLO-integrated security devices from
-      existing networks and place them entirely within the isolated enclave
-      that is created and maintained by SSLO.
-
--  **Proxy Type** - this defines the proxy mode that the inline HTTP service
-   is in. For this lab, set this option to :red:`Explicit`.
-
--  **To Service Configuration** - the "To Service" defines the network
-   connectivity from SSLO to the inline security device.
-
-   -  **To Service** - with the Auto Manage Addresses option enabled, this IP
-      address will be pre-defined, therefore the inbound side of the service
-      must match this IP subnet. With the Auto Manage Addresses option
-      disabled, the IP address must be defined manually. For this lab, leave
-      the :red:`198.19.96.7/25` address intact.
-
-   -  **VLAN** - select the :red:`Create New` option, provide a unique name
-      (ex. :red:`Proxy_in`), select the F5 interface connecting to the inbound
-      side of the service, and add a VLAN tag value if required. For this lab,
-      select interface :red:`1.6` and VLAN tag :red:`30`.
-
--  **Service Down Action** - SSLO also natively monitors the load balanced
-   pool of security devices, and if all pool members fail, can actively
-   bypass this service (**Ignore**), or stop all traffic (**Reset**,
-   **Drop**). For this lab, leave it set to :red:`Ignore`.
-
--  **Security Devices - HTTP Proxy Devices** - this defines the
-   inbound-side IP address of the
-   inline HTTP service, used for passing traffic to this device. Multiple
-   load balanced IP addresses can be defined here. For a transparent proxy
-   HTTP service, only an IP address is required. For an explicit proxy HTTP
-   service, the IP address and listening port is required. Click
-   :red:`Add`, enter :red:`198.19.96.66` for the IP Address, and
-   :red:`3128` for the Port, then click :red:`Done`.
-
--  **Device Monitor** - security service definitions can use
-   specific custom monitors. For this lab, leave it set to the default
-   :red:`/Common/gateway_icmp`.
-
--  **From Service Configuration** - the "From Service" defines the network
-   connectivity from the inline security device to SSLO.
-
-   -  **From Service** - with the Auto Manage Addresses option enabled, this
-      IP address will be pre-defined, therefore the outbound side of the
-      service must match this IP subnet. With the Auto Manage Addresses
-      option disabled, the IP address must be defined manually. For this lab,
-      leave the :red:`198.19.96.245/25` address intact.
-
-   -  **VLAN** - select the :red:`Create New` option, provide a unique
-      name (ex. :red:`Proxy_out`), select the F5 interface connecting to the
-      outbound side of the service, and add a VLAN tag value if required. For
-      this lab, select interface :red:`1.6` and VLAN tag :red:`40`.
-
--  **Manage SNAT Settings** - SSLO offers an option to enable SNAT
-   (source NAT) across an inline layer 3/HTTP service. The primary use case
-   for this is horizontal SSLO scaling, where independent SSLO devices are
-   scaled behind a separate load balancer but share the same inline layer
-   3/HTTP services. As these devices must route back to SSLO, there are now
-   multiple SSLO devices to route back to. SNAT allows the layer 3/HTTP
-   device to know which SSLO sent the packets for proper routing. SSLO
-   scaling also requires that the Auto Manage option be disabled, to provide
-   separate address spaces on each SSLO. For this lab, leave it set to
-   :red:`None`.
-
--  **Authentication Offload** - when an Access authentication profile is
-   attached to an explicit forward proxy topology, this option will present
-   the authenticated username value to the service as an X-Authenticated-User
-   HTTP header. For this lab, leave it :red:`disabled (unchecked)`.
-
--  **iRules** - SSLO allows for the insertion of additional iRule logic
-   at different points. An iRule defined at the service only affects traffic
-   flowing across this service. It is important to understand, however, that
-   these iRules must not be used to control traffic flow (ex. pools, nodes,
-   virtuals, etc.), but rather should be used to view/modify application
-   layer protocol traffic. For example, an iRule assigned here could be used
-   to view and modify HTTP traffic flowing to/from the service. Additional
-   iRules are not required, however, so leave this :red:`empty`.
-
-- Click :red:`Save`.
-
-ICAP service
-~~~~~~~~~~~~
-
-An ICAP service is an RFC 3507-defined service that
-provides some set of services over the ICAP protocol.
-
--  Click on :red:`Add Service`.
-
--  Select the :red:`Digital Guardian ICAP` service from the
-   catalog and click :red:`Add`, or simply double-click it.
-
--  **Name** - provide a unique name to this service (example ":red:`DLP`").
-
-- **IP Family** - this setting defines the IP family used with this layer 3
-   service. Leave it set to :red:`IPv4`.
-
--  **ICAP Devices** - this defines the IP address of the ICAP service, used
-   for passing traffic to this device. Multiple load balanced IP addresses
-   can be defined here. Click :red:`Add`, enter :red:`10.1.30.50` for the
-   IP Address, and :red:`1344` for the Port, and then click :red:`Done`.
-
--  **Device Monitor** - security service definitions can use
-   specific custom monitors. For this lab, leave it set to the default
-   :red:`/Common/tcp`.
-
--  **ICAP Headers** - options are **Default** or **Custom**. Selecting
-   **Custom** allows you to specify additional ICAP headers. For this lab,
-   leave the setting at :red:`Default`.
-
--  **OneConnect** - the F5 OneConnect profile improves performance by reusing
-   TCP connections to ICAP servers to process multiple transactions. If the
-   ICAP servers do not support multiple ICAP transactions per TCP connection,
-   do not enable this option. For this lab, leave the OneConnect setting
-   :red:`enabled (checked)`.
-
--  **Request URI Path** - this is the RFC 3507-defined URI request path to
-   the ICAP service. Each ICAP security vendor will differ with respect to
-   request and response URIs, and preview length, so it is important to
-   review the vendor's documentation. In this lab, enter :red:`/squidclamav`.
-
--  **Response URI Path** - this is the RFC 3507-defined URI response path to
-   the ICAP service. Each ICAP security vendor will differ with respect to
-   request and response URIs, and preview length, so it is important to
-   review the vendor's documentation. In this lab, enter :red:`/squidclamav`.
-
--  **Preview Max Length(bytes)** - this defines the maximum length of the
-   ICAP preview. Each ICAP security vendor will differ with respect to
-   request and response URIs, and preview length, so it is important to
-   review the vendor's documentation. A zero-length preview length implies
-   that data will be streamed to the ICAP service, similar to an HTTP
-   100/Expect process, while any positive integer preview length defines the
-   amount of data (in bytes) that are transmitted first, before streaming the
-   remaining content. The ICAP service in this lab environment does not
-   support a complete stream, so requires a modest amount of initial preview.
-   In this lab, enter :red:`524288`.
-
--  **Service Down Action** - SSLO also natively monitors the load balanced
-   pool of security devices. If all pool members fail, SSLO can actively
-   bypass this service (**Ignore**), or stop all traffic (**Reset**,
-   **Drop**). For this lab, leave it set to :red:`Ignore`.
-
--  **HTTP Version** - this defines whether SSLO sends HTTP/1.1 or HTTP/1.0
-   requests to the ICAP service. The lab's ICAP service supports both.
-
--  **ICAP Policy** - an ICAP policy is a pre-defined LTM CPM policy that can
-   be configured to control access to the ICAP service based on attributes of
-   the HTTP request or response. ICAP processing is enabled by default, so an
-   ICAP CPM policy can be used to disable the request and/or response ADAPT
-   profiles. Leave this :red:`blank (--Select--)`
-
--  Click :red:`Save`.
-
-TAP service
-~~~~~~~~~~~
-
-A TAP service is a passive device that simply receives a copy of traffic.
-
--  Click on :red:`Add Service`.
-
--  Select the :red:`Cisco Firepower Thread Defense TAP`
-   service from the catalog and click :red:`Add`, or simply double-click it.
-
--  **Name** - provide a unique name to this service (example ":red:`TAP`").
-
--  **Mac Address** - for a tap service that is not directly connected to the
-   F5, enter the device's MAC address. For a tap service that is directly
-   connected to the F5, the MAC address does not matter and can be
-   arbitrarily defined. For this lab, enter :red:`12:12:12:12:12:12`.
-
--  **VLAN** - this defines the interface connecting the F5 to the TAP
-   service. Click :red:`Create New` and provide a unique name (ex.
-   :red:`TAP_in`).
-
--  **Interface** - select the :red:`1.7` interface without a tag.
-
--  **Enable Port Remap** - this setting allows SSLO to remap the port of
-   HTTPS traffic flowing to this service. For this lab, leave the option
-   :red:`disabled (unchecked)`.
-
-- Click :red:`Save`.
-
-The **Services** for this lab have now been configured.
-
-- Click :red:`Save & Next` to continue to the next stage.
-
-.. image:: ../images/module1-6.png
-
-Service Chain List
-----------------------
-
-.. image:: ../images/gc-path-4.png
-   :align: center
-
-Service chains are arbitrarily-ordered lists of security devices. Based on
-environmental requirements, different service chains may contain different
-re-used sets of services, and different types of traffic can be assigned to
-different service chains. For example, HTTP traffic may need to go through all
-of the security services, while non-HTTP traffic goes through a subset, and
-traffic destined to a financial service URL can bypass decryption and still
-flow through a smaller set of security services.
-
-|
-
-.. image:: ../images/module1-7.png
-
-|
-
--  Click :red:`Add` to create a new service chain containing all of the
-   security services.
-
-   -  **Name** - provide a unique name to this service chain
-      (ex.":red:`all_services`").
-
-   -  **Services** - select any number of desired service and move them into the
-      :red:`Selected Service Chain Order` column, optionally also ordering
-      them as required. In this lab, select :red:`all of the services` and then
-      click the :red:`rightward-pointing arrow` to move them to the
-      :red:`Selected Service Chain Order` side.
-
-   -  Click :red:`Save`.
-
--  Click :red:`Add` to create a new service chain for just the L2 (ex.
-   FireEye) and TAP services.
-
-   -  **Name** - provide a unique name to this service chain (ex.
-      ":red:`L2_services`").
-
-   -  **Services** - select and then move the :red:`FireEye` and :red:`TAP`
-      services to the right-hand side.
-
-   - Click :red:`Save`.
-
-.. image:: ../images/module1-8.png
-
-The **Service Chains** have now been configured.
-
-- Click :red:`Save & Next` to continue to the next stage.
 
 Security Policy
 -------------------
