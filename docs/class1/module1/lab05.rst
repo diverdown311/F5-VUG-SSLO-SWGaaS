@@ -673,7 +673,7 @@ selected settings page.
 Upon successfully deploying the configuration, SSL Orchestrator will now
 display a **Configure** view:
 
-.. image:: ../images/module1-16.png
+.. image:: ../images/swg-final-deployment.PNG
 
 
 In the above list you will notice the following Virtual Servers have been created:
