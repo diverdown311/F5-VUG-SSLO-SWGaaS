@@ -289,6 +289,11 @@ The **SSL** settings have now been configured.
 
 -  Click :red:`Save & Next` to continue to the next stage.
 
+
+- **Authentication List** 
+   SSL Orchestrator now supports an option to include Authentication services such as
+   an **Online Certificate Status Protocol (OCSP)**.  Click Save/Next
+
 .. image:: ../images/module1-4.png
 
 
