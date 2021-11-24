@@ -16,7 +16,7 @@ machine.
 
 You will then see the Client desktop.
 
-.. image:: ../images/module1-19.png
+.. image:: ../images/module1-19-2.PNG
    :scale: 50 %
    :align: center
 
