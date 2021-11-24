@@ -38,7 +38,7 @@ provide an opportunity to define DNS and route settings later in the workflow.
 .. NOTE::
    DNS and NTP settings have already been defined in this lab.
 
-.. image:: ../images/module1-2.png
+.. image:: ../images/Layer3_Outbound_Topology.PNG
    :align: center
 
 -  No other configurations are required on this page, click :red:`Next`.
