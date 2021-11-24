@@ -291,7 +291,9 @@ The **SSL** settings have now been configured.
 
 - **Authentication List** 
    SSL Orchestrator now supports an option to include Authentication services such as
-   an **Online Certificate Status Protocol (OCSP)**.  Click Save/Next
+   an **Online Certificate Status Protocol (OCSP)**.  For this lab we will not be 
+   leveraging the **Authentication** option.   Click :red: `Save & Next`
+   
 
 .. image:: ../images/module1-4.png
 
@@ -307,44 +309,15 @@ services that attach to SSLO. For this lab we will use the SSLO Guided
 Configuration to insert the F5 Secure Web Gateway (SWG) as an inline security
 service in a service chain for decrypted traffic. 
 
-.. image:: ../images/swg-services.PNG
-
 This lab will create a Transparent Layer-3 SWG service as well as default Per-Session
 and Per-Request Access Policies which can be modified once the deployment has been
 completed.  Click :red:`Add Service`, then select the **F5 Secure Web Gateway" servicce
 from the catalog and click :red:`Add`, or simply double-click the service to go
 to its configuration page.
 
-Inline layer 2 service
-~~~~~~~~~~~~~~~~~~~~~~
+.. image:: ../images/swg-services.PNG
 
--  Select the :red:`FireEye NX Inline Layer 2` service from
-   the catalog and click :red:`Add`, or simply double-click
-   the FireEye NX Inline Layer 2 service (or any other
-   Inline Layer 2 service in the catalog).
 
--  **Name** - provide a unique name to this service (example
-   ":red:`FireEye`").
-
--  **Network Configuration** - paths define the network interfaces that take
-   inspectable traffic to the inline service and receive traffic from the
-   service. Click :red:`Add`.
-
-   -  **Ratio** - inline security services are natively load balanced, so
-      this setting defines a ratio, if any for the load balanced pool
-      members. Enter :red:`1`.
-
-   -  **From BIGIP VLAN** - this is the interface taking traffic to the inline
-      service. Select the :red:`Create New` option, enter a unique name
-      (ex. :red:`FireEye_in`), select the F5 interface connecting to the
-      inbound side of the service, and add a VLAN tag value if required. For
-      this lab, select interface :red:`1.4` without a VLAN tag.
-
-   -  **To BIGIP VLAN** - this is the interface receiving traffic from the
-      inline service. Select the :red:`Create New` option, enter a unique
-      name (ex. :red:`FireEye_out`), select the F5 interface connecting to the
-      outbound side of the service, and add a VLAN tag value if required. For
-      this lab, select interface :red:`1.5` without a VLAN tag.
 
    - Click :red:`Done`.
 
