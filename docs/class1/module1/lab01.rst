@@ -13,8 +13,8 @@ internal client will be able to access remote (Internet) resources
 through SSLO, providing decrypted, inspectable traffic to the security
 services.
 
--  Using your web browser (Chrome preferred), open a :red:`TMUI (HTTPS)` session 
-   to the :red:`BIGIP SSLO Primary` component.
+-  Using your web browser (Chrome preferred) from the **Ubuntu18.04 Client**, open a :red:`TMUI (HTTPS)` session 
+   to the :red:`BIGIP SSLO Primary` component via https://10.1.1.4
    
 -  Login as :red:`admin` with password :red:`admin`.
 
