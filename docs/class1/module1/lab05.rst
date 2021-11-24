@@ -488,58 +488,41 @@ user interface for the definition of security policies.
 Add a New Rule
 ~~~~~~~~~~~~~~
 
-In this lab, create an additional rule to bypass SSL for "Financial Data and
-Services" and "Health and Medicine" URL categories.
+In this section of the lab, create a **Pinners** rule with the following settings:
 
--  Click :red:`Add` to create a new rule.
+  **A Pinners_Rule checks to make sure the content is SSL/TLS. It also checks the category “Pinners” which contains websites with Pinned Certificates. Sites in the category Pinners are automatically set to Bypass decryption.**
 
--  **Name** - provide a unique name for the rule (ex. ":red:`urlf_bypass`").
+.. image:: ../images/module1-9.png
 
--  **Conditions** - Select **Category Lookup (All)** from the drop-down list
+-  Click :red:`Save & Next` to create a new rule.
+
+-  **Name** - provide a unique name for the rule (ex. ":red:`Pinners_Rule`").
+
+-  **Conditions** - Select **Category Lookup SNI** from the drop-down list
    and then add the :red:`Financial Data and Services` and :red:`Health and Medicine`
    URL categories. Start typing the category name to narrow the list.
 
    .. NOTE::
-      The **Category Lookup (All)** condition provides categorization for
+      The **Category Lookup SNI** condition provides categorization for
       TLS SNI, HTTP Connect and HTTP Host information.
 
 -  **Action** - select :red:`Allow`.
 
 -  **SSL Forward Proxy Action** - select :red:`Bypass`.
 
--  **Service Chain** - select the FireEye/TAP service chain
-   :red:`L2_services`.
+-  **Service Chain** - should be set to **None**
 
 -  Click :red:`OK`.
 
    .. image:: ../images/module1-10.png
 
-In the list of rules, notice that the **All Traffic** rule intercepts but
-does *not* send traffic to any service chain. For the lab, edit this rule to
-send all intercepted traffic to a service chain.
+The last **Security Policy** rue should be a for **All Traffic** that intercepts but
+does *not* send traffic to any service chain. 
 
--  Click the pencil icon to :red:`edit` this rule.
-
--  **Service Chain** - select the service chain containing :red:`all` of the
-   services.
 
 -  Click :red:`OK`.
 
    .. image:: ../images/module1-11.png
-
--  **Server Certificate Status Check** - this option
-   inserts additional security policy logic to validate the remote
-   server certificate and return a blocking page to the user if the
-   certificate is untrusted or expired. One or both of the Certificate
-   Response options on the SSL Configuration page (Expire Certificate
-   Response and Untrusted Certificate Response) must be set to 'ignore'.
-   SSLO will "mask" the server certificate's attributes in order to
-   present a blocking page with a valid forged certificate. For this lab,
-   leave this option disabled.
-
--  Proxy Connect - this option allow you to add an upstream explicit proxy
-   to your security rule chaining. You can add multiple proxy devices, or
-   pool members, as necessary. For this lab, leave this option disabled.
 
 
 The **Security Policy** has now been configured.
@@ -579,9 +562,9 @@ security policies created in the topology workflow.
    selection is exposed for both explicit and transparent forward
    proxy topology deployments. In transparent forward proxy mode,
    this allows selection of an access policy to support captive
-   portal authentication. For this lab,
-   leave the default selection.
-
+   portal authentication. For this lab, we will use the
+      **/Common/sslo_SWGTest.app/sslo_SWGTest_accessProfile** 
+   
 -  **L7 Interception Rules - Protocols** - FTP and email protocol traffic
    are all "server-speaks-first" protocols, and therefore SSLO must process
    these separately from typical client-speaks-first protocols like HTTP. This
@@ -610,18 +593,7 @@ default gateway route and outbound SNAT settings.
 
 -  **Gateways** - enables per-topology instance gateway routing. The options
    include: use the system Default Route, use an existing gateway pool, or
-   create a new gateway. For this lab, select :red:`Create New`.
-
--  **IPv4 Outbound Gateways** - when creating a new gateway, this section
-   provides the ratio and gateway address settings.
-
-   -  **Ratio** - multiple gateway IP addresses are load balanced in an LTM pool,
-      and the ratio setting allows SSLO to proportion traffic to the gateway
-      members, as required. A ratio of 1 for all members evenly distributes the
-      load across them. For this lab, select :red:`1`.
-
-   -  **Address** - this is the next hop gateway IP address. For this lab, enter
-      :red:`10.1.20.1`.
+   create a new gateway. For this lab, select :red:`Default Route`.
 
 .. image:: ../images/module1-13.png
 
@@ -709,15 +681,13 @@ selected topology.
 
 .. image:: ../images/module1-17.png
 
-In the above list:
+In the above list you will notice the following Virtual Servers have been created:
 
-- The **-in-t-4** listener defines normal TCP IPv4 traffic.
+- The **ssloS_F5_SWG-t-4** listener.
 
-- The **-in-u-4** listener defines normal UDP IPv4 traffic.
+- The **sslo_SWG-Test-in-t-4** listener.
 
-- The **-ot-4** listener defines normal non-TCP/non-UDP IPv4 traffic.
-
-- The **-ftp, -ftps** listeners create paths for each respective protocol.
+- The **ssloS_F5_SWG-t-6** listener defines normal non-TCP/non-UDP IPv4 traffic.
 
 This completes the configuration of SSL Orchestrator as a
 transparent forward proxy.
