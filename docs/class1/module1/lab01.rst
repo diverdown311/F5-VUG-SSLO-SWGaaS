@@ -17,7 +17,7 @@ services.
    under the **BIGIP SSLO Primary** object which will open 
    **TMUI (HTTPS)** session.
    
-      .. image:: ../images/big-ip01.JPG
+      .. image:: ../images/big-ip01.PNG
      
    
 -  Login as :red:`admin` with password :red:`admin`.
