@@ -22,7 +22,7 @@ services.
    :align: center   
 
 
--  Login as :red:`admin` with password :red:`admin`.
+-  Login as **admin** with password **admin**
 
 -  Additionally, you will need to establish an **XRDP** session to the **Ubuntu14.04 Desktop Outbound** 
    client which is attached to a :red:`10.1.10.0/24` network
