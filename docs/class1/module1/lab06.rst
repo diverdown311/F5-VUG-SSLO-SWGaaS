@@ -10,12 +10,18 @@ Define custom SWG Per-Request Policies
    since the Per-Request policy handles the bulk of SWG processing
 -  **Access Profile Scope** - For this lab we will simply be using **Named** scopes
 
+-  The first task will be to create a custom URL category filter
+-  Conversely, you can simply select one of the built-in URL category filters **allow-all, basic-security, block-all, default**
 
-.. image:: ../images/gc-path.png
+
+.. image:: ../images/url-categories1.PNG
    :align: center
-
-The first task will be to create a custom URL category filter.
-
+   
+   
+.. image:: ../images/url-categories2.PNG
+   :align: center
+   
+   
 
 Creating an SWG per-request policy
 ------------------
@@ -36,8 +42,14 @@ Creating an SWG per-request policy
    modifications as requred.
    
    
- .. image:: ../images/gc-path.png
+ .. image:: ../images/per-request1.PNG
    :align: center
+   
+   
+  .. image:: ../images/per-request1.PNG
+   :align: center
+   
+   
    
 -  While most options are possible within the SWG per-request policy
    several are not appropriate for an inline SWG service including the list
