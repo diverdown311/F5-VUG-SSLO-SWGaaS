@@ -18,6 +18,8 @@ Define custom SWG Per-Request Policies
    :align: center
    
    
+   
+   
 .. image:: ../images/url-categories2.PNG
    :align: center
    
@@ -46,7 +48,9 @@ Creating an SWG per-request policy
    :align: center
    
    
-  .. image:: ../images/per-request1.PNG
+   
+   
+  .. image:: ../images/url-categories3.PNG
    :align: center
    
    
