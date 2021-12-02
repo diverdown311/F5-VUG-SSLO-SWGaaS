@@ -100,15 +100,17 @@ topologies:
    no IP addresses on its outer edges. The L2 Outbound topology
    provides a transparent path for outbound traffic flows.
 
-   .. important:: It is important to distinguish SSLO's layer 2 topology from those
-      of other traditional layer 2 SSL visibility vendors. Layer 2
-      solutions such as the Blue Coat SSL visibility appliance (SSLVA)
-      limit the types of devices that can be inserted into the
-      inspection zone to layer 2 and below, and devices must be directly
-      connected to the appliance. An SSLO layer 2 topology only exists at
-      the outer edges. Inside the inspection zone, full-proxy routing is
-      still happening, so layer 3 and HTTP services can still function
-      normally.
+   **IMPORTANT**
+   
+   It is important to distinguish SSLO's layer 2 topology from those
+   of other traditional layer 2 SSL visibility vendors. Layer 2
+   solutions such as the Blue Coat SSL visibility appliance (SSLVA)
+   limit the types of devices that can be inserted into the
+   inspection zone to layer 2 and below, and devices must be directly
+   connected to the appliance. An SSLO layer 2 topology only exists at
+   the outer edges. Inside the inspection zone, full-proxy routing is
+   still happening, so layer 3 and HTTP services can still function
+   normally.
 
 -  **Existing Application** - this topology is designed to work with
    existing LTM applications. Whereas the L3 Inbound topology
@@ -540,14 +542,14 @@ security policies created in the topology workflow.
 
 -  **Source Address** - the source address field provides a filter
    for incoming traffic based on source address and/or source subnet.
-   It is usually appropriate to leave the default :red:`0.0.0.0%0/0`
+   It is usually appropriate to leave the default **0.0.0.0%0/0**
    setting applied to allow traffic from all addresses to be processed.
 
 -  **Destination Address/Mask** - the destination address/mask field
    provides a filter for incoming traffic based on destination
    address and/or destination subnet. As this is a transparent
    forward proxy configuration, it is appropriate to leave the
-   default :red:`0.0.0.0%0/0` setting applied to allow all
+   default **0.0.0.0%0/0** setting applied to allow all
    outbound traffic to be processed.
 
 -  **Ingress Network - VLANs** - this defines the VLANs through which traffic
@@ -560,6 +562,7 @@ security policies created in the topology workflow.
    proxy topology deployments. In transparent forward proxy mode,
    this allows selection of an access policy to support captive
    portal authentication. For this lab, we will use the
+   
       **/Common/sslo_SWGTest.app/sslo_SWGTest_accessProfile** 
    
 -  **L7 Interception Rules - Protocols** - FTP and email protocol traffic
@@ -683,6 +686,6 @@ In the above list you will notice the following Virtual Servers have been create
 - The **ssloS_F5_SWG-t-6** listener defines normal non-TCP/non-UDP IPv4 traffic.
 
 This completes the configuration of SSL Orchestrator deployment
-for Secure Web Gateway (SWG)
+for Secure Web Gateway (SWG).
 
 
