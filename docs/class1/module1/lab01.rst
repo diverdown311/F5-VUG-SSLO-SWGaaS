@@ -17,10 +17,12 @@ services.
    under the **BIGIP SSLO Primary** object which will open 
    **TMUI (HTTPS)** session.
    
+   
    .. image:: ../images/big-ip-sslo1.PNG
    :align: center
    
-      
+   
+   
 -  Login as :red:`admin` with password :red:`admin`.
 
 -  Additionally, you will need to establish an **XRDP** session to the **Ubuntu14.04 Desktop Outbound** 
