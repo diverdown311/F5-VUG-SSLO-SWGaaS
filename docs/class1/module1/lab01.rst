@@ -16,17 +16,23 @@ services.
 -  Within the lab environment click on the **Access** drop down menu
    under the **BIGIP SSLO Primary** object which will open 
    **TMUI (HTTPS)** session.
-   
-      .. image:: ../images/big-ip01.PNG
-     
+
+
+.. image:: ../images/big-ip01.PNG
+   :align: center   
+
+
 -  Login as :red:`admin` with password :red:`admin`.
 
 -  Additionally, you will need to establish an **XRDP** session to the **Ubuntu14.04 Desktop Outbound** 
    client which is attached to a :red:`10.1.10.0/24` network
    and is assigned the IP :red:`10.1.10.50`. This network is attached to the
    BIG-IP :red:`1.1` interface.
+
+
+.. image:: ../images/ubuntu-desktop-outbound.PNG
+   :align: center 
    
-   .. image:: ../images/ubuntu-desktop-outbound.PNG
 
 -  The **L2 device** is consolidated onto the **Ubuntu14.04 Services** server configured to bridge its eth1
    and eth2 interfaces. Its inbound VLAN (traffic to it) is attached to the
