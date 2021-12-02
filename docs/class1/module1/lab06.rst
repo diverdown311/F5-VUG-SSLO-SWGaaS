@@ -26,7 +26,7 @@ Define custom SWG Per-Request Policies
    
 
 Creating an SWG per-request policy
-------------------
+===========================================================================
 
    From the left-hand menu, navigate to
    **Access, Profiles/Policies, Per-Request Policies**. Click
@@ -43,16 +43,12 @@ Creating an SWG per-request policy
    **save**.  Now add that macro to the primary policy flow to enable it.  Make any additional
    modifications as requred.
    
- 
- 
+  
  .. image:: ../images/per-request1.PNG
-   :align: center
+ 
    
    
-   
-   
-  .. image:: ../images/url-categories3.PNG
-   :align: center
+ .. image:: ../images/url-categories3.PNG
    
    
    
