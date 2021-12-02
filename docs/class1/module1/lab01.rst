@@ -14,7 +14,7 @@ through SSLO, providing decrypted, inspectable traffic to the security
 services.
 
 -  Within the lab environment click on the **Access** drop down menu
-   under the :red: `BIGIP SSLO Primary` object which will open 
+   under the :red:`BIGIP SSLO Primary` object which will open 
    :red:`TMUI (HTTPS)` session.
       
 -  Login as :red:`admin` with password :red:`admin`.
