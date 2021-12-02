@@ -502,7 +502,8 @@ In this section of the lab, create a **Pinners** rule with the following setting
    and then add the :red:`Financial Data and Services` and :red:`Health and Medicine`
    URL categories. Start typing the category name to narrow the list.
 
-   .. NOTE::
+   **NOTE**
+   
       The **Category Lookup SNI** condition provides categorization for
       TLS SNI, HTTP Connect and HTTP Host information.
 
