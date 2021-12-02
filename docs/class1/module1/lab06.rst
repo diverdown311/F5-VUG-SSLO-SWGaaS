@@ -1,7 +1,7 @@
 .. role:: red
 .. role:: bred
 
-MANAGE THE SSL ORCHESTRATOR SECURE WEB GATEWAY SECURITY POLICY
+Configuring an SWG per-request policy
 ===========================================================================
 
 While security policy rules work well in most traffic processing scenarios during
