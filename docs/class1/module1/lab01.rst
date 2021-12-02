@@ -16,6 +16,10 @@ services.
 -  Within the lab environment click on the **Access** drop down menu
    under the **BIGIP SSLO Primary** object which will open 
    **TMUI (HTTPS)** session.
+   
+   .. image:: ../images/big-ip-sslo1.PNG
+   :align: center
+   
       
 -  Login as :red:`admin` with password :red:`admin`.
 
