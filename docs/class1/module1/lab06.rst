@@ -43,7 +43,8 @@ Creating an SWG per-request policy
    **save**.  Now add that macro to the primary policy flow to enable it.  Make any additional
    modifications as requred.
    
-   
+ 
+ 
  .. image:: ../images/per-request1.PNG
    :align: center
    
@@ -55,23 +56,18 @@ Creating an SWG per-request policy
    
    
    
+
+
 -  While most options are possible within the SWG per-request policy
    several are not appropriate for an inline SWG service including the list
    below.
    
 -  Assignment
-      Pool Assignment
+      **Pool Assignment**
 -  General
-      IP Based SSL Bypass Set
-      Server Cert Response Control
-      Server Cert Status
-      SSL Check
-      SSL Intercept Set
-      SSL Configuration Select
+      **IP Based SSL Bypass Set, Server Cert Response Control, Server Cert Status, SSL Check, SSL Intercept Set, SSL Configuration Select**
 -  Traffic Management
-      Proxy Select
-      Service Connect
-      Session Check
+      **Proxy Select, Service Connect, Session Check**
 
 
       
