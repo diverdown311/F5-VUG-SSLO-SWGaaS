@@ -64,6 +64,21 @@ Creating an SWG per-request policy
       **IP Based SSL Bypass Set, Server Cert Response Control, Server Cert Status, SSL Check, SSL Intercept Set, SSL Configuration Select**
 -  Traffic Management
       **Proxy Select, Service Connect, Session Check**
+      
+
+Applying the new Per-Request policy to SSL Orchestrator
+===========================================================================
+
+-  Once the new Per-Request policy has been configured it can then be applied
+   to the SSL Orchestrator Topology.
+
+
+
+
+
+
+
+
 
 
       
