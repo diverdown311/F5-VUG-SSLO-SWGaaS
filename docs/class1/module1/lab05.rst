@@ -372,15 +372,17 @@ Inline layer 3 service
    must be configured manually. It is recommended to leave this option
    :red:`enabled (checked)`.
 
-   .. ATTENTION:: In environments where SSLO is introduced to existing security
-      devices, it is a natural tendency to not want to have to move these
-      devices. And while SSLO certainly allows it, by not moving the security
-      devices into SSLO-protected enclaves, customers unintentionally run the
-      risk of exposing sensitive decrypted traffic to other devices that may
-      be connected to these existing networks. As a security best practice, it
-      is *highly* recommended to remove SSLO-integrated security devices from
-      existing networks and place them entirely within the isolated enclave
-      that is created and maintained by SSLO.
+   **ATTENTION**
+   
+   In environments where SSLO is introduced to existing security
+   devices, it is a natural tendency to not want to have to move these
+   devices. And while SSLO certainly allows it, by not moving the security
+   devices into SSLO-protected enclaves, customers unintentionally run the
+   risk of exposing sensitive decrypted traffic to other devices that may
+   be connected to these existing networks. As a security best practice, it
+   is *highly* recommended to remove SSLO-integrated security devices from
+   existing networks and place them entirely within the isolated enclave
+   that is created and maintained by SSLO.
 
 -  **To Service Configuration** - the "To Service" defines the network
    connectivity from SSLO to the inline security device.
