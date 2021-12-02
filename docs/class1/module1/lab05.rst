@@ -19,9 +19,7 @@ Initialization
 ------------------
 
 From the left-hand menu, navigate to
-:red:`SSL Orchestrator > Configuration`. If this is the first
-time accessing SSLO in a new BIG-IP build, the Guided Configuration UI will
-automatically load and deploy the built-in SSLO package.
+:red:`SSL Orchestrator > Configuration`. 
 
 .. image:: ../images/module1-1.png
    :align: center
